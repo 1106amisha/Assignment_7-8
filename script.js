@@ -21,7 +21,10 @@ function rollDice() {
 }
 
 function checkWinner() {
-    if (player1Score >= winningScore) {
+    if (player1Score >= winningScore && player2Score >= winningScore) {
+        document.getElementById('winner').innerText = 'It\'s a Tie!';
+        document.getElementById('roll-btn').disabled = true;
+    } else if (player1Score >= winningScore) {
         document.getElementById('winner').innerText = 'Player 1 Wins!';
         document.getElementById('roll-btn').disabled = true;
     } else if (player2Score >= winningScore) {
